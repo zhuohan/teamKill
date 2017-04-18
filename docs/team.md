@@ -6,11 +6,11 @@ title:  Team
 # {{ page.title }}
 
 
-## USER 1
-***UCI Net ID***: ucinetid
+## Zichao Yuan
+***UCI Net ID***: zichaoy1
 
-## USER 2
-***UCI Net ID***: ucinetid
+## Edwin Angkasa
+***UCI Net ID***: eangkasa
 
-## USER 3
-***UCI Net ID***: ucinetid
+## Zhuohan Li
+***UCI Net ID***: zhuohal1
