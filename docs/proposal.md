@@ -32,9 +32,9 @@ In our algorithm, we will use min-max tree to stabilize the direction, reinforce
 
 
 For the second game, capture the flag, we are going to implement two kinds of AI: global and individual. The global AI and individual AI have different visibility of the map:
-        The global AI is the manager of the team and it will decide whether a teammate should go advancing or attack or defend.
+    The global AI is the manager of the team and it will decide whether a teammate should go advancing or attack or defend.
 
-        The individual AI is the player itself. It will receive the basic command from global AI and all the information of other players and flags so that it can output the next behaviour of this individual player.
+    The individual AI is the player itself. It will receive the basic command from global AI and all the information of other players and flags so that it can output the next behaviour of this individual player.
 
 We are going to implement reinforcement learning with the difference of friendly team’s average distance to the enemy flag and enemy team’s average distance to the ally flag as a global heuristic. Individual behavior will be determined by a finite state machine of set behaviors (advancing, attacking, defending), with commands issued by the global AI. Individual AI decision will also be affected by their health (survival), the presence of enemies and teammates in their immediate surrounding (cooperation), and game-changing factors (ally/enemy has the flag, etc.).
 
