@@ -33,9 +33,9 @@ In our algorithm, we will use min-max tree to stabilize the direction, reinforce
 
 For the second game, capture the flag, we are going to implement two kinds of AI: global and individual.
 
-The global AI and individual AI have different visibility of the map:
+\tThe global AI and individual AI have different visibility of the map:
 
-The global AI is the manager of the team and it will decide whether a teammate should go advancing or attack or defend.
+\tThe global AI is the manager of the team and it will decide whether a teammate should go advancing or attack or defend.
 
 The individual AI is the player itself. It will receive the basic command from global AI and all the information of other players and flags so that it can output the next behaviour of this individual player.
 
@@ -52,9 +52,9 @@ The baseline of our AI is to expect reasonable behaviours from AI such as stoppi
 
 To test our AI with the abilities we expect, we will have several sanity cases for each ability:
 
-A case in which the enemy with the flag is backing to its base, see if AI in the middle can stop/kill the enemy.
-A case in which AI with the flag is chased by many enemies, see if our AI can pass the flag to a healthier teammate or run toward to its base.
-A case in which our flag is well defended by our teammates, see if the AI can take enemies’ flag.
+\tA case in which the enemy with the flag is backing to its base, see if AI in the middle can stop/kill the enemy.
+\tA case in which AI with the flag is chased by many enemies, see if our AI can pass the flag to a healthier teammate or run toward to its base.
+\tA case in which our flag is well defended by our teammates, see if the AI can take enemies’ flag.
 
 
 
