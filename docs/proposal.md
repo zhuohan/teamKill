@@ -52,9 +52,9 @@ The baseline of our AI is to expect reasonable behaviours from AI such as stoppi
 
 To test our AI with the abilities we expect, we will have several sanity cases for each ability:
 
-A case in which the enemy with the flag is backing to its base, see if AI in the middle can stop/kill the enemy.
-A case in which AI with the flag is chased by many enemies, see if our AI can pass the flag to a healthier teammate or run toward to its base.
-A case in which our flag is well defended by our teammates, see if the AI can take enemies’ flag.
+    A case in which the enemy with the flag is backing to its base, see if AI in the middle can stop/kill the enemy.
+    A case in which AI with the flag is chased by many enemies, see if our AI can pass the flag to a healthier teammate or run toward to its base.
+    A case in which our flag is well defended by our teammates, see if the AI can take enemies’ flag.
 
 
 
