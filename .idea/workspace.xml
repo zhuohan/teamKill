@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f0c5f041-1cbb-484a-9638-c2ee2124c098" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/proposal.md" afterPath="$PROJECT_DIR$/docs/proposal.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/_config.yml" afterPath="$PROJECT_DIR$/docs/_config.yml" />
     </list>
     <ignored path="175.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,10 +55,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="proposal.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="proposal.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/proposal.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25369978">
+            <state vertical-scroll-proportion="-4.4444447">
               <caret line="8" column="108" selection-start-line="8" selection-start-column="108" selection-end-line="8" selection-end-column="108" />
               <folding />
             </state>
@@ -78,18 +78,18 @@
       <file leaf-file-name="index.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/index.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.962963">
+            <state vertical-scroll-proportion="-14.185185">
               <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="67" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="18" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.45">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -113,6 +113,7 @@
         <option value="$PROJECT_DIR$/hi.py" />
         <option value="$PROJECT_DIR$/docs/team.md" />
         <option value="$PROJECT_DIR$/docs/proposal.md" />
+        <option value="$PROJECT_DIR$/docs/_config.yml" />
       </list>
     </option>
   </component>
@@ -541,7 +542,13 @@
       <option name="project" value="LOCAL" />
       <updated>1492657096127</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="test">
+      <created>1492657215544</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1492657215544</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -685,26 +692,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/_config.yml">
+    <entry file="file://$PROJECT_DIR$/docs/proposal.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="18" />
+        <state vertical-scroll-proportion="-4.4444447">
+          <caret line="8" column="108" selection-start-line="8" selection-start-column="108" selection-end-line="8" selection-end-column="108" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/index.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.962963">
+        <state vertical-scroll-proportion="-14.185185">
           <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/proposal.md">
+    <entry file="file://$PROJECT_DIR$/docs/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25369978">
-          <caret line="8" column="108" selection-start-line="8" selection-start-column="108" selection-end-line="8" selection-end-column="108" />
+        <state vertical-scroll-proportion="0.45">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
