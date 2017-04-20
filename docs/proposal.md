@@ -3,7 +3,7 @@ layout: default
 title: Proposal
 ---
 
-##Summary of the Project (30 points)
+## Summary of the Project (30 points)
 
 
 Make an artificial intelligence for multiplayer games in Minecraft Malmo. The first game of AI would be for a game about running in a collapsing map as shown in the video http://sameersingh.org/courses/aiproj/sp17/writeups/proposal.pdf from 3:00 to 3:45. We will write an AI with the input of all the locations of the player and the enemy players. The output of our algorithm will be the direction the player should go in the next second.
@@ -16,7 +16,7 @@ We can apply this AI to all the games with “Capture the flag mode map” inclu
 
 
 
-##AI/ML Algorithms 
+## AI/ML Algorithms
 
 For the first phase of our AI, we will get the locations of all the enemies in the map and the available map for players. The output will be the direction the player should go in the next second. Our logic:
 Give positive values for the available road in one direction and negative values for enemy players in that direction.
@@ -59,7 +59,7 @@ To quantify the improvement, we can run games with old versions of AI and newer 
 
 
 
-##Appointment with the Instructor
+## Appointment with the Instructor
 
 We reserved the appointment at 12:15pm, April 25, 2017.
 
