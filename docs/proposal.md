@@ -35,9 +35,9 @@ For the second game, capture the flag, we are going to implement two kinds of AI
 
 The global AI and individual AI have different visibility of the map:
 
-    The global AI is the manager of the team and it will decide whether a teammate should go advancing or attack or defend.
+- The global AI is the manager of the team and it will decide whether a teammate should go advancing or attack or defend.
 
-    The individual AI is the player itself. It will receive the basic command from global AI and all the information of other players and flags so that it can output the next behaviour of this individual player.
+- The individual AI is the player itself. It will receive the basic command from global AI and all the information of other players and flags so that it can output the next behaviour of this individual player.
 
 We are going to implement reinforcement learning with the difference of friendly team’s average distance to the enemy flag and enemy team’s average distance to the ally flag as a global heuristic. Individual behavior will be determined by a finite state machine of set behaviors (advancing, attacking, defending), with commands issued by the global AI. Individual AI decision will also be affected by their health (survival), the presence of enemies and teammates in their immediate surrounding (cooperation), and game-changing factors (ally/enemy has the flag, etc.).
 
@@ -52,9 +52,9 @@ The baseline of our AI is to expect reasonable behaviours from AI such as stoppi
 
 To test our AI with the abilities we expect, we will have several sanity cases for each ability:
 
-    A case in which the enemy with the flag is backing to its base, see if AI in the middle can stop/kill the enemy.
-    A case in which AI with the flag is chased by many enemies, see if our AI can pass the flag to a healthier teammate or run toward to its base.
-    A case in which our flag is well defended by our teammates, see if the AI can take enemies’ flag.
+- A case in which the enemy with the flag is backing to its base, see if AI in the middle can stop/kill the enemy.
+- A case in which AI with the flag is chased by many enemies, see if our AI can pass the flag to a healthier teammate or run toward to its base.
+- A case in which our flag is well defended by our teammates, see if the AI can take enemies’ flag.
 
 
 
