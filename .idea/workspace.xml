@@ -59,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/docs/proposal.md">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.71458775">
-              <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -475,7 +475,13 @@
       <option name="project" value="LOCAL" />
       <updated>1492656215834</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="test">
+      <created>1492656279317</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1492656279317</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -638,7 +644,7 @@
     <entry file="file://$PROJECT_DIR$/docs/proposal.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.71458775">
-          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>

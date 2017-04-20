@@ -31,7 +31,10 @@ In our algorithm, we will use min-max tree to stabilize the direction, reinforce
 
 
 
-For the second game, capture the flag, we are going to implement two kinds of AI: global and individual. The global AI and individual AI have different visibility of the map:
+For the second game, capture the flag, we are going to implement two kinds of AI: global and individual.
+
+The global AI and individual AI have different visibility of the map:
+
     The global AI is the manager of the team and it will decide whether a teammate should go advancing or attack or defend.
 
     The individual AI is the player itself. It will receive the basic command from global AI and all the information of other players and flags so that it can output the next behaviour of this individual player.
