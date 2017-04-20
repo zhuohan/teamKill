@@ -3,7 +3,7 @@ layout: default
 title: Proposal
 ---
 
-## Summary of the Project (30 points)
+## Summary of the Project
 
 
 Make an artificial intelligence for multiplayer games in Minecraft Malmo. The first game of AI would be for a game about running in a collapsing map as shown in the video http://sameersingh.org/courses/aiproj/sp17/writeups/proposal.pdf from 3:00 to 3:45. We will write an AI with the input of all the locations of the player and the enemy players. The output of our algorithm will be the direction the player should go in the next second.
@@ -19,11 +19,13 @@ We can apply this AI to all the games with “Capture the flag mode map” inclu
 ## AI/ML Algorithms
 
 For the first phase of our AI, we will get the locations of all the enemies in the map and the available map for players. The output will be the direction the player should go in the next second. Our logic:
-Give positive values for the available road in one direction and negative values for enemy players in that direction.
-Calculate the player’s next direction base on those values.
-Calculate the directions of enemy players in the same way.
-Adjust the player’s direction based on enemy’s direction by changing the values of enemy players in the values.
-Repeat the step 2-4 until the result stabilized or reach the time limit.
+
+1. Give positive values for the available road in one direction and negative values for enemy players in that direction.
+2. Calculate the player’s next direction base on those values.
+3. Calculate the directions of enemy players in the same way.
+4. Adjust the player’s direction based on enemy’s direction by changing the values of enemy players in the values.
+5. Repeat the step 2-4 until the result stabilized or reach the time limit.
+
 In our algorithm, we will use min-max tree to stabilize the direction, reinforcement learning to determine the default impact of enemy according to its location and direction.
 
 
