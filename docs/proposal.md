@@ -6,9 +6,9 @@ title: Proposal
 ## Summary of the Project
 
 
-Make an artificial intelligence for multiplayer games in Minecraft Malmo. The first game of AI would be for a game about running in a collapsing map as shown in the video http://sameersingh.org/courses/aiproj/sp17/writeups/proposal.pdf from 3:00 to 3:45. We will write an AI with the input of all the locations of the player and the enemy players. The output of our algorithm will be the direction the player should go in the next second.
+Make an artificial intelligence for multiplayer games in Minecraft Malmo. The first game of AI would be for a game about running in a collapsing map as shown in the video ( https://www.youtube.com/watch?v=E6yxgg0MMMM ) from 3:00 to 3:45. We will write an AI with the input of all the locations of the player and the enemy players. The output of our algorithm will be the direction the player should go in the next second.
 
-The second phase of our AI would be for a game called “Capture the enemy flag”http://www.minecraftguides.org/capture-the-flag/. In this phase, we will write an AI with the input of player locations (both enemy players and ally players) and the flag location. The output will be the direction that our player should go in the next second and the weapon/abilities he will use. (His goal is to steal the flag from enemy base and bring it back to the ally base.)
+The second phase of our AI would be for a game called “Capture the enemy flag” ( http://www.minecraftguides.org/capture-the-flag/ ). In this phase, we will write an AI with the input of player locations (both enemy players and ally players) and the flag location. The output will be the direction that our player should go in the next second and the weapon/abilities he will use. (His goal is to steal the flag from enemy base and bring it back to the ally base.)
 
 Applications:
 We can apply this AI to all the games with “Capture the flag mode map” including Overwatch.
