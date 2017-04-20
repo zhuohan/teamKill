@@ -55,7 +55,7 @@ To test our AI with the abilities we expect, we will have several sanity cases f
 A case in which the enemy with the flag is backing to its base, see if AI in the middle can stop/kill the enemy.
 A case in which AI with the flag is chased by many enemies, see if our AI can pass the flag to a healthier teammate or run toward to its base.
 A case in which our flag is well defended by our teammates, see if the AI can take enemies’ flag.
-…
+
 
 
 With the basic abilities, we try to apply AI to an actual game to see its behaviors.
