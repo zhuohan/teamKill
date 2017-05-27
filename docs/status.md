@@ -52,8 +52,8 @@ We will make the agent run in a single player map and watch how long he can stay
 Initially, we thought that if the agent runs through all the tiles available, we will consider that the agent is as good as a human being. However, that is not smart if we think that there are enemies in our map. If there is no enemies, the agent should just circle around map to get the maximum number of tiles, but that makes the agent vulnerable if there is enemies. The enemy will just come and cut your route. So we do not require our agent to take up all the tiles, but require him to go to the best location for survival which is usually, the center of the map (or available tiles).
 
 
-![docs](https://github.com/Ziliver/teamKill/blob/master/docs/1.png)
-![docs](https://github.com/Ziliver/teamKill/blob/master/docs/2.png)
+![docs](1.png)
+![docs](2.png)
 
 
 Another evaluation factor is the possibility of death that is due to inappropriate action. Currently, our agent does not do well when it reaches the margin. However, we tries to decrease that possibility. We realized that the slower it runs, the less likely it goes wrong with the margin. So we evaluate our agent by comparing its speed and its error possibilities. If it reaches the both the accepted speed and accepted error possibilities, we consider that it is successful.
