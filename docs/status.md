@@ -51,6 +51,7 @@ We will make the agent run in a single player map and watch how long he can stay
 
 Initially, we thought that if the agent runs through all the tiles available, we will consider that the agent is as good as a human being. However, that is not smart if we think that there are enemies in our map. If there is no enemies, the agent should just circle around map to get the maximum number of tiles, but that makes the agent vulnerable if there is enemies. The enemy will just come and cut your route. So we do not require our agent to take up all the tiles, but require him to go to the best location for survival which is usually, the center of the map (or available tiles).
 
+<iframe width="560" height="315" src="https://github.com/Ziliver/teamKill/blob/master/docs/1.png" frameborder="0" allowfullscreen></iframe>
 
 ![alt text](https://github.com/Ziliver/teamKill/blob/master/docs/1.png)
 ![alt text](https://github.com/Ziliver/teamKill/blob/master/docs/2.png)
