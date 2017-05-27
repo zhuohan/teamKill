@@ -3,7 +3,8 @@ layout: default
 title:  Home
 ---
 ![Screenshot](Mine3.PNG){:class="img-responsive centered" height="50%"}
-TeamKill is an Artificial Intelligence Malmo-based project developed for a multiplayer Minecraft survival minigame “Falling Floor”.
+
+<h4>TeamKill is an Artificial Intelligence Malmo-based project developed for a multiplayer Minecraft survival minigame “Falling Floor”.</h4>
 
 ## Falling Floor
 In this Minecraft minigame, the players' mission is to survive by running around the map while floors start to crumble beneath them. This zero-sum game requires players to be the last one standing in order to win the game. The players are not allowed to jump or do any other actions other than to run for survival and employ various tactics to survive longer than their opponents.
