@@ -10,58 +10,59 @@ TeamKill is an Artificial Intelligence Malmo-based project developed for a multi
 
 ## Approach
 
-## Single Player Version
+TeamKill is an Artificial Intelligence Malmo-based project developed for a multiplayer Minecraft survival mini-game “Falling Floor”. Our first goal is to create an intelligent agent that can survive the mini-game as long as possible (Single player AI). Our second goal is to make the agent smart enough to win against multiple enemies in the same map (Multiplayer AI).
 
-We implemented Breadth First Search algorithm to calculate number of contiguous tiles remaining once the agent moves to an adjacent tile (representing one movement direction), effectively detecting choke points on the map and preventing the agent from trapping itself, ensuring survival. BFS is run for 8 adjacent tiles from the agent’s location with 25 visited tiles cutoff, simulating a max tree of depth 1. We also applied pruning by skipping over adjacent tiles that have already been visited in the previous BFS. The resulting subset of adjacent tiles are then used as input for another algorithm that determines the most promising direction, one that has the most tiles in a straight line. In case of a tie, the algorithm will pick the last direction the agent was moving if it is within this subset of tiles, or the first direction in the subset otherwise.
+Game rules:
+We implemented the game ourselves. The game is a survival game in Minecraft and the player tries to survive in the map as long as possible. The player who died in the end wins. During the game, each player walks through a plain ground and the ground the player pass by will be disappeared in 10 seconds, so the player has to keep moving in order to survive.
 
-## Multiplayer Version
 
-Our plan is to implement two algorithms for our agent: Breadth First Search to determine contiguous tiles, and Reinforcement Learning to set weight on each action the agent can take. Our algorithm takes the whole map and the position of individual players as input, and outputs the best possible movement direction our agent can make every second. Our algorithm considers (1) number of contiguous tiles (which makes up an ‘island’) in every possible direction originating from the player using BFS, (2) the number of enemy players in the island, and (3) the agent’s influence over the tiles in the island to calculate the score of the state.
-A player’s influence is calculated as follows:
-Influence = (# Tiles closer to the player than any other players)/(# Tiles in the island)
+Our Artificial Intelligence tries to survive in this floor falling game. It uses algorithms with three types of logics to find the best direction that it should go. The algorithm takes the input of all the map’s available ground location (as a matrix of 1 and 0) and the player location. The algorithm outputs the best direction the player should go in the next second.
 
-The input for our algorithm in single player mode:
-	<# Contiguous tiles in our island>
-The input for our algorithm in multiplayer mode:
-<# Contiguous tiles in our island, # Players in our island, Agent’s influence>
-The output:
-The best possible direction our agent can move (including diagonals)
+The three types of logic that our algorithm has are ranked by complexity. Initially, the player will use the smartest logics which is really time consuming. When the situation becomes more and more complex, the player will choose the algorithm that is simpler, but faster.
 
-Each factor will contribute to the next direction our agent moves every second, with the weight of each action determined by Reinforcement Learning.
+- Three levels of smartness:
+
+1. If the player is running out of time to think about his current situation, he will look up all the eight directions of his current location. He will count the number of tiles each direction can reach if he walks straight to that single direction for the rest of the game. Then, he will choose the direction with the longest path from the count.
+2. If the player has more time, he will look around the eight adjacent tiles of him. For each tile, he will count the total length of the eight direction value in the previous algorithm as the score of that tile. Then, the player will move to the tile with the highest score.
+3. If the player still has some time, he will iterate through all the tiles in the map and find the tile that has the maximum possibility to survive. Then, he will navigate to that tile (output the first navigation direction).
+
+More specifically about the third level of smartness, the player will select the tile with maximum possibility to survive by using a new algorithm inspired by state transition machine.
+
+- Algorithm:
+
+Comment: since each tile is represented by 1 in the input matrix and the missing tile is represented by 0, we tried to find the tile that surround by other tiles in the center.
+
+1. Find all the tiles reachable by player by using breadth first search.
+2. For each tiles reachable, add its surrounding tiles’ score to itself and output the new score to a new matrix. In that way, if a tile is surrounded by 8 tiles, it will have a higher score than the ones surrounded by 7 tiles.
+3. Then, we repeat the first step 8 times so that each tile will be impacted by surrounding tiles with a diameter of 8.
+4. We compare all the tiles score and find the tiles with the highest score. (There may be several of them)
+5. We reassign each highest score tiles to be 1 and other tiles to be 0
+6. We repeat step 2-5 until there is only 4 or less tiles remaining
+7. We randomly select one of the remaining tiles and consider it as the tile with the highest possibility of survival.
+
+After selecting the targeted tile, we use the Dijkstra’s algorithm to find the shortest path between the player and the targeted tile. Finally, we output the first step of that path.
+
 
 ## Evaluation
+We will make the agent run in a single player map and watch how long he can stay alive without enemies. We will record the time usage of our algorithm, the level of smartness in each of them. If the time usage of our algorithm is shorter and the average level of smartness is higher, the agent is considered better.
 
-Our evaluation for the single player agent:
-Able to survive as long as possible:
-Prevent itself from being trapped in a small island
-Approximate and move to the best direction based on tile length
+Initially, we thought that if the agent runs through all the tiles available, we will consider that the agent is as good as a human being. However, that is not smart if we think that there are enemies in our map. If there is no enemies, the agent should just circle around map to get the maximum number of tiles, but that makes the agent vulnerable if there is enemies. The enemy will just come and cut your route. So we do not require our agent to take up all the tiles, but require him to go to the best location for survival which is usually, the center of the map (or available tiles).
 
-Our evaluation plan for the multiplayer agent:
-Able to choose the best course of actions in different scenarios:
-Being able to trap other players in a small island
-Being able to actively increase its influence over its island
-Being able to revert back to survival mode in certain situations
+Another evaluation factor is the possibility of death that is due to inappropriate action. Currently, our agent does not do well when it reaches the margin. However, we tries to decrease that possibility. We realized that the slower it runs, the less likely it goes wrong with the margin. So we evaluate our agent by comparing its speed and its error possibilities. If it reaches the both the accepted speed and accepted error possibilities, we consider that it is successful.
 
-So far, we have completed the implementation for the single player agent. Our evaluation for this part of the project include:
 
-Ensuring that the agent leaves survives as long as possible in a 40x40 grid map with 3 seconds delay before the floor gets destroyed
-Ensuring that the agent do not trap itself in a smaller island when it is on a choke point between two or more islands.
 
-The result of our evaluation shows that the agent is successful in avoiding being trapped on a choke point (video).
-Agent has been observed to be able to survive for 268 seconds in a 40x40 grid map with 3 seconds tile destroy delay.
-Observation from 5 runs:
 
-Run	# Survival Time (seconds)
-1	268
-2	276
-3	282
-4	
-5	
+## Challenges faced:
+The major challenges we faced was:
 
+1. Minecraft API is limited, we built our game with algorithms to surpass the missing API.
+
+We need to destroy a block 5 seconds after the player steps one it, however, Minecraft does not have the function to delay the destruction. Therefore, we implemented a hashmap (dictionary) to store all the destructions and time spot. Then, we destroy the blocks after the time in the dictionary is 5 seconds earlier than the current time.
+
+2. The initial AI algorithm is slow because it tries to find the best tile for this phase with step 2, but repeat n/2 times. That makes the algorithm running time O(8^n). So what modified our algorithms to this version which has running time of  O(n^1.5). (n is the number of tiles)
 
 
 ## Remaining Goal and Challenges:
-
-The remaining goal is to finish the implementation of the multiplayer algorithm and to train our agent enough so that it displays intelligent behavior when playing the game against other AIs and possibly humans.
-
-An algorithm design challenge arises as our algorithm has to take running time into account. Since this is a fast-paced minigame, our agent will not have time to calculate the best move possible using tree search. We tried running our agent using the Hypermax algorithm, a multiplayer version of minimax with pruning. While it was able to choose the correct result, it took ~3.5 seconds to choose the best move from looking 2 moves ahead in a 3-player game. We have decided not to use this algorithm for the multiplayer version of the game, but will still use its concept of looking ahead to prevent the agent from trapping itself and ensure its survival.
+1. Our algorithm is fast enough to support smartness level 3 single player version, but remains level 3 in multi-agent (all of them are AI) version. We will improve that in the future.
+2. Our algorithm compute the player’s location based on matrix. However, the real AI’s location is not decimal number. We rounded it off to be integer, but there are some special cases when the AI is standing in the corner of a tile, but want to go to another corner’s direction. That makes it goes to an adjacent tile first before it reaches its goal tile. We will make our agent think about that in the future.
