@@ -58,8 +58,7 @@ Initially, we thought that if the agent runs through all the tiles available, we
 
 Another evaluation factor is the possibility of death that is due to inappropriate action. Currently, our agent does not do well when it reaches the margin. However, we tries to decrease that possibility. We realized that the slower it runs, the less likely it goes wrong with the margin. So we evaluate our agent by comparing its speed and its error possibilities. If it reaches the both the accepted speed and accepted error possibilities, we consider that it is successful.
 
-https://drive.google.com/file/d/0B0O60KGITE7TYzh5d21iNW1MSDg/view?usp=sharing
-![](https://github.com/Ziliver/teamKill/blob/master/docs/3.png)
+![](/3.png)
 
 ## Challenges faced:
 The major challenges we faced was:
