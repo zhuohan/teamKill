@@ -51,17 +51,12 @@ The result of our evaluation shows that the agent is successful in avoiding bein
 Agent has been observed to be able to survive for 268 seconds in a 40x40 grid map with 3 seconds tile destroy delay.
 Observation from 5 runs:
 
-Run #
-Survival Time (seconds)
-1
-268
-2
-276
-3
-282
-4
-
-5
+Run	# Survival Time (seconds)
+1	268
+2	276
+3	282
+4	
+5	
 
 
 
