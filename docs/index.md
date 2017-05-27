@@ -11,7 +11,7 @@ The single player version of this game requires player to survive as long as pos
 ## Our Agent
 Our AI agent will try to survive in this environment by using our search and learn algorithm. The search part of the algorithm ensures agent's survival by preventing self-entrapment in small isolated lands and providing the best direction the agent can move based on tile placement. Our learning algorithm allows the agent to learn and adapt to various, ever-changing situations.
 
-![Breadth First Search](Algorithm2-1.jpg){:class="img-responsive centered" height="50%" width="50%}
+![Breadth First Search](Algorithm2-1.jpg){:class="centered" height="50%" width="50%}
 
 ## Future Applications
 Our algorithm employs search and reinforcement learning to estimate the best movement direction for our agent under a harshly competitive environment with a huge time constraint. When applied to a 3D environment, our search and learn algorithm can help agents to explore and survive in harsh, changing environments with unpredictable external agents such as debris-filled areas in the outer space and the deep ocean.
