@@ -13,13 +13,24 @@ TeamKill is an Artificial Intelligence Malmo-based project developed for a multi
 
 ## Approach
 
-TeamKill is an Artificial Intelligence Malmo-based project developed for a multiplayer Minecraft survival mini-game “Falling Floor”. Our first goal is to create an intelligent agent that can survive the mini-game as long as possible (Single player AI). Our second goal is to make the agent smart enough to win against multiple enemies in the same map (Multiplayer AI).
+# Building the game:
 
 Game rules:
-We implemented the game ourselves. The game is a survival game in Minecraft and the player tries to survive in the map as long as possible. The player who died in the end wins. During the game, each player walks through a plain ground and the ground the player pass by will be disappeared in 10 seconds, so the player has to keep moving in order to survive.
+We implemented the game ourselves. The game is a survival game in Minecraft and the player tries to survive in the map as long as possible. During the game, each player walks inside a plain ground and each tile of the ground disappears 10 seconds after a player stepped on it. Players have to keep moving in order to survive. 
+
+Implementing the game:
+
+We wrote a special block that will be destroyed 10 seconds after something collides with it. However, the Minecraft API is limited, and does not have the function for delaying the destruction. To solve that problem, we implemented a hashmap (dictionary) to store all the destructions and time spot. Then, we destroy the blocks after the time in the dictionary is 10 seconds earlier than the current time.
+
+After creating the block, we designed the map with 40 * 40 special block. To prevent the player going beyond the ground, we surround it with diamond block that is 10 units high. To make sure the player lose after it falls off the ground, we put 2 layers of lava underneath the ground.
+
+(For more information about how the game works, please watch our video.)
 
 
-Our Artificial Intelligence tries to survive in this floor falling game. It uses algorithms with three types of logics to find the best direction that it should go. The algorithm takes the input of all the map’s available ground location (as a matrix of 1 and 0) and the player location. The algorithm outputs the best direction the player should go in the next second.
+# Implementing the Artificial Intelligence:
+
+Our artificial intelligence tries to survive in this floor falling game. It uses algorithms with three types of logics to find the best direction that it should go. The algorithm takes the input of all the map’s available ground location (as a matrix of 1 and 0) and the player location. The algorithm outputs the best direction the player should go in the next second.
+
 
 The three types of logic that our algorithm has are ranked by complexity. Initially, the player will use the smartest logics which is really time-consuming. When the situation becomes more and more complex, the player will choose the algorithm that is simpler, but faster.
 
