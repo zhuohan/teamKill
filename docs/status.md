@@ -44,7 +44,7 @@ The three types of logic that our algorithm has are ranked by complexity. Initia
 ![Breadth First Search](4.png){:class="img-responsive centered" height="50%" width="50%"}
 
 3. If the player still has some time, he will iterate through all the tiles in the map and find the tile that has the maximum possibility to survive. Then, he will navigate to that tile (output the first navigation direction).
-![Breadth First Search](5.png){:class="img-responsive centered" height="50%" width="50%"}
+![Breadth First Search](6.png){:class="img-responsive centered" height="50%" width="50%"}
 
 More specifically about the third level of smartness, the player will select the tile with maximum possibility to survive by using a new algorithm inspired by state transition machine.
 
