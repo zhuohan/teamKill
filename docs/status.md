@@ -47,7 +47,14 @@ After selecting the targeted tile, we use the Dijkstra’s algorithm to find the
 
 
 ## Evaluation
-We will make the agent run in a single player map and watch how long he can stay alive without enemies. We will record the time usage of our algorithm, the level of smartness in each of them. If the time usage of our algorithm is shorter and the average level of smartness is higher, the agent is considered better.
+
+In order to show that our AI is great, we try to prove that it thinks like a human. Normally, when we play the ground falling game, we will go away from the enemy players and go toward the directions that have bigger lands. In our algorithm, smartness level 3 is trying to human’s thought. The AI will find the ground center that has largest ability of expansion. The AI will then, navigate to that point.
+
+However, the algorithm is really time consuming and we provide the AI with simpler choices. At version 1, only when the situation is easier for the AI to do the human thought, will the AI do it. Usually, it happens when the AI is trapped in a small island with less than 100 tiles. If it uses the algorithm in larger island, it will takes more than 1 seconds to determine the next move. However, the AI usually moves 2-3 tiles each second, so it will die with that much delay. At that phase, we consider our AI to be: barely working.
+
+After finishing the second version, we dramatically improved the running speed of our algorithm and enables it to calculate the whole map (1600 tiles) within 0.25 seconds in Python. At this phase, our AI can easily use the human logic and navigate to that direction.
+
+To demonstrate the speed of the AI’s logic, will make the agent run in a single player map and watch how long he can stay alive without enemies. We will record the time usage of our algorithm, the level of smartness in each of them. If the time usage of our algorithm is shorter and the average level of smartness is higher, the agent is considered better.
 
 Initially, we thought that if the agent runs through all the tiles available, we will consider that the agent is as good as a human being. However, that is not smart if we think that there are enemies in our map. If there is no enemies, the agent should just circle around map to get the maximum number of tiles, but that makes the agent vulnerable if there is enemies. The enemy will just come and cut your route. So we do not require our agent to take up all the tiles, but require him to go to the best location for survival which is usually, the center of the map (or available tiles).
 
@@ -55,8 +62,7 @@ Initially, we thought that if the agent runs through all the tiles available, we
 ![docs](2.png)
 ![docs](3.png)
 
-
-Another evaluation factor is the possibility of death that is due to inappropriate action. Currently, our agent does not do well when it reaches the margin. However, we tries to decrease that possibility. We realized that the slower it runs, the less likely it goes wrong with the margin. So we evaluate our agent by comparing its speed and its error possibilities. If it reaches the both the accepted speed and accepted error possibilities, we consider that it is successful.
+Another evaluation factor is the possibility of death that is due to inappropriate action. Currently, our agent does not do well when it reaches the margin. However, we tries to decrease that possibility. We realized that if the AI make decisions too slow, it is very possible that it went to the wrong direction. (since the correct direction has not been returned yet) To solve that problem, we gave even more strict time limit for our AI: 0.2 seconds. Then, we evaluate our agent by comparing its error possibilities to the previous version. If it reaches the both the accepted speed and accepted error possibilities, we consider that it is successful.
 
 ![docs](/1.png)
 
@@ -71,5 +77,5 @@ We need to destroy a block 5 seconds after the player steps one it, however, Min
 
 
 ## Remaining Goal and Challenges:
-1. Our algorithm is fast enough to support smartness level 3 single player version, but remains level 3 in multi-agent (all of them are AI) version. We will improve that in the future.
+1. Our algorithm is fast enough to support smartness level 3 single player version, but remains level 2 in multi-agent (all of them are AI) version. We will improve that in the future.
 2. Our algorithm compute the player’s location based on matrix. However, the real AI’s location is not decimal number. We rounded it off to be integer, but there are some special cases when the AI is standing in the corner of a tile, but want to go to another corner’s direction. That makes it goes to an adjacent tile first before it reaches its goal tile. We will make our agent think about that in the future.
