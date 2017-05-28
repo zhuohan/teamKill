@@ -84,15 +84,12 @@ Another evaluation factor is the possibility of death that is due to an inapprop
 ![docs](/1.png)
 
 # Challenges faced:
-The major challenges we faced was:
 
 1. Minecraft API is limited, we built our game with algorithms to surpass the missing API.
-
-We need to destroy a block 5 seconds after the player steps one it, however, Minecraft does not have the function to delay the destruction. Therefore, we implemented a hashmap (dictionary) to store all the destructions and time spot. Then, we destroy the blocks after the time in the dictionary is 5 seconds earlier than the current time.
-
 2. The initial AI algorithm is slow because it tries to find the best tile for this phase with step 2, but repeat n/2 times. That makes the algorithm running time O(8^n). So what modified our algorithms to this version which has the running time of  O(n^1.5). (n is the number of tiles)
 
 
 # Remaining Goal and Challenges:
 1. Our algorithm is fast enough to support smartness level 3 single player version, but remains level 2 in multi-agent (all of them are AI) version. We will improve that in the future.
 2. Our algorithm computes the player’s location based on matrix. However, the real AI’s location is not a decimal number. We rounded it off to be integer, but there are some special cases when the AI is standing in the corner of a tile, but want to go to another corner’s direction. That makes it goes to an adjacent tile first before it reaches its goal tile. We will make our agent think about that in the future.
+3. In order to make our AI looks more similar to human players, we need to add the attacking algorithm to it. Currently, the AI just tries to go the best location for survival. In the next phase, we will teach the AI to identify the vulnerable opponent and tries to kill them.
