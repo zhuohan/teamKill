@@ -12,7 +12,7 @@ We used Minecraft forge to build the game. While playing the game, players will 
 
 The second part is to create an intelligent agent that tries to survive in the game. Our AI is fully observable and it finds the best move every second. We created our own algorithm consisting state transition machine, Dijkstra’s algorithm for our AI to help him think like a human.
 
-Our ultimate goal is to make the AI defeating human players. To do that, we teach how to play offensive. 
+Our ultimate goal is to make the AI defeating human players. To do that, we teach our AI how to play offensive. 
 
 
 
