@@ -5,7 +5,10 @@ title: Proposal
 
 # Project Summary
 
-TeamKill is an Artificial Intelligence Malmo-based project developed for a multiplayer Minecraft survival minigame “Falling Floor”. Our first goal is to create an intelligent agent that can survive the minigame as long as possible (Single player AI). Our second goal is to make the agent smart enough to win against multiple enemies on the same map (Multiplayer AI).
+TeamKill is an Artificial Intelligence Malmo-based project developed for a single/multi-player Minecraft survival minigame “ the Falling Floor”. The project consists of two parts, including the game and the AI. In the game, players spawn in a random location in a 40 * 40 grid. 
+
+
+Our first goal is to create an intelligent agent that can survive the minigame as long as possible (Single player AI). Our second goal is to make the agent smart enough to win against multiple enemies on the same map (Multiplayer AI).
 (display video)
 
 <iframe width="1120" height="630" src="https://www.youtube.com/embed/glNiOwP4hp8" frameborder="0" allowfullscreen></iframe>
