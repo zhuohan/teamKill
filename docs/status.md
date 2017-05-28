@@ -41,7 +41,7 @@ The three types of logic that our algorithm has are ranked by complexity. Initia
 ![Breadth First Search](Algorithm2-1.jpg){:class="img-responsive centered" height="50%" width="50%"}
 
 2. If the player has more time, he will look around the eight adjacent tiles of him. For each tile, he will count the total length of the eight direction value in the previous algorithm as the score of that tile. Then, the player will move to the tile with the highest score.
-![Breadth First Search](4.jpg){:class="img-responsive centered" height="50%" width="50%"}
+![Breadth First Search](4.png){:class="img-responsive centered" height="50%" width="50%"}
 
 3. If the player still has some time, he will iterate through all the tiles in the map and find the tile that has the maximum possibility to survive. Then, he will navigate to that tile (output the first navigation direction).
 
