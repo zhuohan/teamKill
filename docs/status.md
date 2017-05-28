@@ -3,7 +3,7 @@ layout: default
 title: Proposal
 ---
 
-## Project Summary
+# Project Summary
 
 TeamKill is an Artificial Intelligence Malmo-based project developed for a multiplayer Minecraft survival minigame “Falling Floor”. Our first goal is to create an intelligent agent that can survive the minigame as long as possible (Single player AI). Our second goal is to make the agent smart enough to win against multiple enemies on the same map (Multiplayer AI).
 (display video)
@@ -11,9 +11,9 @@ TeamKill is an Artificial Intelligence Malmo-based project developed for a multi
 <iframe width="1120" height="630" src="https://www.youtube.com/embed/glNiOwP4hp8" frameborder="0" allowfullscreen></iframe>
 
 
-## Approach
+# Approach
 
-# Building the game:
+## Building the game:
 
 Game rules:
 We implemented the game ourselves. The game is a survival game in Minecraft and the player tries to survive in the map as long as possible. During the game, each player walks inside a plain ground and each tile of the ground disappears 10 seconds after a player stepped on it. Players have to keep moving in order to survive. 
@@ -27,7 +27,7 @@ After creating the block, we designed the map with 40 * 40 special block. To pre
 (For more information about how the game works, please watch our video.)
 
 
-# Implementing the Artificial Intelligence:
+## Implementing the Artificial Intelligence:
 
 Our artificial intelligence tries to survive in this floor falling game. It uses algorithms with three types of logics to find the best direction that it should go. The algorithm takes the input of all the map’s available ground location (as a matrix of 1 and 0) and the player location. The algorithm outputs the best direction the player should go in the next second.
 
@@ -57,7 +57,7 @@ Comment: since each tile is represented by 1 in the input matrix and the missing
 After selecting the targeted tile, we use the Dijkstra’s algorithm to find the shortest path between the player and the targeted tile. Finally, we output the first step of that path.
 
 
-## Evaluation
+# Evaluation
 
 In order to show that our AI is great, we try to prove that it thinks like a human. Normally, when we play the ground falling game, we will go away from the enemy players and go toward the directions that have bigger lands. In our algorithm, smartness level 3 is trying to human’s thought. The AI will find the ground center that has the largest ability of expansion. The AI will then, navigate to that point.
 
@@ -77,7 +77,7 @@ Another evaluation factor is the possibility of death that is due to an inapprop
 
 ![docs](/1.png)
 
-## Challenges faced:
+# Challenges faced:
 The major challenges we faced was:
 
 1. Minecraft API is limited, we built our game with algorithms to surpass the missing API.
@@ -87,6 +87,6 @@ We need to destroy a block 5 seconds after the player steps one it, however, Min
 2. The initial AI algorithm is slow because it tries to find the best tile for this phase with step 2, but repeat n/2 times. That makes the algorithm running time O(8^n). So what modified our algorithms to this version which has the running time of  O(n^1.5). (n is the number of tiles)
 
 
-## Remaining Goal and Challenges:
+# Remaining Goal and Challenges:
 1. Our algorithm is fast enough to support smartness level 3 single player version, but remains level 2 in multi-agent (all of them are AI) version. We will improve that in the future.
 2. Our algorithm computes the player’s location based on matrix. However, the real AI’s location is not a decimal number. We rounded it off to be integer, but there are some special cases when the AI is standing in the corner of a tile, but want to go to another corner’s direction. That makes it goes to an adjacent tile first before it reaches its goal tile. We will make our agent think about that in the future.
