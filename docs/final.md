@@ -23,7 +23,7 @@ Implementing the game:
 
 We implement a special block that would be destroyed 10 seconds after something collided with it. However, the Minecraft API is limited, and does not have the function for delaying the destruction. To solve that problem, we implement a hashmap (dictionary) to store all the destructions and time spot. Then, we destroy the blocks after the time in the dictionary is 10 seconds earlier than the current time.
 
-After creating the block, we design the map with 40 * 40 special block. To prevent the player going beyond the ground, we surround it with diamond block that is 10 units high. To make sure the player lose after it falls off the ground, we put 2 layers of lava underneath the ground.
+After creating the block, we design the map with 40 * 40 special block. To prevent the player going beyond the ground, we surround it with diamond blocks that is 10 units high. To make sure the player lose after it falls off the ground, we put 2 layers of lava underneath the ground.
 
 (For more information about how the game works, please watch our video.)
 ![Screenshot](Mine3.PNG){:class="img-responsive centered" height="40%"}
@@ -50,18 +50,18 @@ If the player has more time, he will look around the eight adjacent tiles of him
 If the player still has some time, he will iterate through all the tiles in the map and find the tile that has the maximum possibility to survive. Then, he will navigate to that tile (output the first navigation direction).
 ![Breadth First Search](5.png){:class="img-responsive centered" height="40%" width="40%"}
 
-More specifically about the third level of smartness, the player will select the tile with maximum possibility to survive by using a new algorithm inspired by state transition machine.
+More specifically about the third level of smartness, the player will select the tile with the maximum possibility to survive by using a new algorithm inspired by state transition machine.
 
 #### Algorithm:
 
 Comment: since each tile is represented by 1 in the input matrix and the missing tile is represented by 0, we tried to find the tile that surround by other tiles in the center.
 
-1. Find all the tiles reachable by player by using breadth first search.
+1. Find all the tiles reachable by the player by using breadth first search.
 2. For each tile reachable, add its surrounding tiles’ score to itself and output the new score to a new matrix. In that way, if a tile is surrounded by 8 tiles, it will have a higher score than the ones surrounded by 7 tiles.
 3. Then, we repeat the first step 8 times so that each tile will be impacted by surrounding tiles with a diameter of 8.
 4. We compare all the tiles score and find the tiles with the highest score. (There may be several of them)
 5. We reassign each highest score tiles to be 1 and other tiles to be 0
-6. We repeat step 2-5 until there are only 4 or less tiles remaining
+6. We repeat step 2-5 until there are only 4 or fewer tiles remaining
 7. We randomly select one of the remaining tiles and consider it as the tile with the highest possibility of survival.
 
 After selecting the targeted tile, we use the Dijkstra’s algorithm to find the shortest path between the player and the targeted tile. Finally, we output the first step of that path.
@@ -69,7 +69,7 @@ After selecting the targeted tile, we use the Dijkstra’s algorithm to find the
 
 ### Improvement
 
-After evaluating the previous combined version of our algorithm, we realize that the running time of navigating algorithm is too long. Sometimes, the agent gets conflicting decision between level 2 and level 3 and it keeps switching because the running time is just at the limit. 
+After evaluating the previous combined version of our algorithm, we realize that the running time of navigating algorithm is too long. Sometimes, the agent gets a conflicting decision between level 2 and level 3 and it keeps switching because the running time is just at the limit. 
 
 In order to help our AI decide which method to use, we added the navigation memory to our agent. The navigation memory records part of the previous navigation result. It remembers the next four steps the navigation will go after finding the route. If the next step is available the agent will just walk to that step instead of recalculating the navigation algorithm again.
 
@@ -81,7 +81,7 @@ Additionally we realize that a special occasion that our agent may die by going 
 
 ![Breadth First Search](logical direction.png){:class="img-responsive centered" height="40%" width="40%"}
 
-In the above senario, the player may want to go to the top left direction which is Okay if he stands on the middle of the grid. However, he is standing on the bottom left corner. If he walks to top left direction, he may end up going to the left tile first before going to the top left tile. If the left tile is dangerous, he may die with that mistake.
+In the above scenario, the player may want to go to the top left direction which is Okay if he stands on the middle of the grid. However, he is standing on the bottom left corner. If he walks to top left direction, he may end up going to the left tile first before going to the top left tile. If the left tile is dangerous, he may die with that mistake.
 
 To solve that problem, we added a feature for eliminating the diagonal direction that may cause the player to death in those cases. We implemented it by splitting the player’s standing tile into four pieces and determine which piece the player is currently standing on. Then, we find the direction that may kill the player and remove it from our choices.
 
@@ -101,14 +101,14 @@ In the second version, we significantly improve the running speed of our algorit
 
 
 
-In the third version, we, again, improved the running speed of our algorithm. We decrease the average running time to be less than 0.2 second in Python. With this improvement, we also increased the surviving time of the agent to be 4 times longer than the previous version.
+In the third version, we, again, improved the running speed of our algorithm. We decrease the average running time to be less than 0.2 seconds in Python. With this improvement, we also increased the surviving time of the agent to be 4 times longer than the previous version.
  
 ![Breadth First Search](imp.png){:class="img-responsive centered" height="80%" width="80%"}
 
 Finally, we also evaluate a traditional greedy algorithm based on the Grid World MDP. Surprisingly, our algorithm runs more than 100 times faster than the traditional solution.
 
 In order to visualize the abilities of our algorithms, we run 10 times for each of our algorithms including:
-#####  Level 1: Immediate decision
+##### Level 1: Immediate decision
 ##### Level 2: Two steps decision
 ##### Level 3 (Navigating to best point ) combined with level 1 and 2
 ##### Grid World MDP greedy algorithm
