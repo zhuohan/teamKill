@@ -75,10 +75,11 @@ In order to help our AI decide which method to use, we added the navigation memo
 
 To do that, we added a queue to our navigation system. The queue has a maximum length of 5 and it will be updated once the route is recalculated. Surprisingly, the navigation memory significantly reduce the average running time of our AI and keeps the majority of the decision to be navigating decision. The surviving time also increased significantly.
 
-[picture]
+![Breadth First Search](logical direction.png){:class="img-responsive centered" height="50%" width="50%"}
 
 Additionally we realized that a special occasion that our agent may die by going to the logical direction.
-[picture]
+
+![Breadth First Search](navigating memory.png){:class="img-responsive centered" height="50%" width="50%"}
 
 To solve that problem, we added a feature for eliminating the diagonal direction that may cause the player to death in those cases. We implemented it by splitting the player’s standing tile into four pieces and determine which piece the player is currently standing on. Then, we find the direction that may cause kill the player and remove it from our choices.
 
