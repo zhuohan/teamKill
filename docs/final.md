@@ -111,7 +111,6 @@ In order to visualize the abilities of our algorithms, we run 10 times for each 
 ##### Level 3 (Navigating to best point ) combined with level 1 and 2
 ##### Grid World MDP greedy algorithm
 ##### improved level 1, 2, 3
-## References
 
 #### Running time of level 1 is significantly faster than level 2
 
@@ -134,6 +133,7 @@ In order to visualize the abilities of our algorithms, we run 10 times for each 
 ![Breadth First Search](123gs.png){:class="img-responsive centered" height="40%" width="40%"}
 ![Breadth First Search](all.png){:class="img-responsive centered" height="40%" width="40%"}
 
+## References
 
 Fridenfalk, M. (2014)
 N-Person Minimax and Alpha-Beta Pruning.
