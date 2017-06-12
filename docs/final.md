@@ -136,5 +136,7 @@ In order to visualize the abilities of our algorithms, we run 10 times for each 
 ## References
 
 Fridenfalk, M. (2014)
+
 N-Person Minimax and Alpha-Beta Pruning.
+
 In: NICOGRAPH International 2014 (pp. 43-52).
