@@ -26,7 +26,7 @@ We wrote a special block that will be destroyed 10 seconds after something colli
 After creating the block, we designed the map with 40 * 40 special block. To prevent the player going beyond the ground, we surround it with diamond block that is 10 units high. To make sure the player lose after it falls off the ground, we put 2 layers of lava underneath the ground.
 
 (For more information about how the game works, please watch our video.)
-![Screenshot](Mine3.PNG){:class="img-responsive centered" height="50%"}
+![Screenshot](Mine3.PNG){:class="img-responsive centered" height="40%"}
 
 
 ### Implementing the Artificial Intelligence:
@@ -40,15 +40,15 @@ The three types of logic that our algorithm has are ranked by complexity. Initia
 
 #####  Level 1: Immediate decision
 If the player is running out of time to think about his current situation, he will look up all the eight directions of his current location. He will count the number of tiles each direction can reach if he walks straight to that single direction for the rest of the game. Then, he will choose the direction with the longest path from the count.
-![Breadth First Search](Algorithm2-1.jpg){:class="img-responsive centered" height="50%" width="50%"}
+![Breadth First Search](Algorithm2-1.jpg){:class="img-responsive centered" height="40%" width="40%"}
 
 ##### Level 2: Two steps decision
 If the player has more time, he will look around the eight adjacent tiles of him. For each tile, he will count the total length of the eight direction value in the previous algorithm as the score of that tile. Then, the player will move to the tile with the highest score.
-![Breadth First Search](4.png){:class="img-responsive centered" height="50%" width="50%"}
+![Breadth First Search](4.png){:class="img-responsive centered" height="40%" width="40%"}
 
 ##### Level 3: Navigating to best point
 If the player still has some time, he will iterate through all the tiles in the map and find the tile that has the maximum possibility to survive. Then, he will navigate to that tile (output the first navigation direction).
-![Breadth First Search](5.png){:class="img-responsive centered" height="50%" width="50%"}
+![Breadth First Search](5.png){:class="img-responsive centered" height="40%" width="40%"}
 
 More specifically about the third level of smartness, the player will select the tile with maximum possibility to survive by using a new algorithm inspired by state transition machine.
 
@@ -75,11 +75,11 @@ In order to help our AI decide which method to use, we added the navigation memo
 
 To do that, we added a queue to our navigation system. The queue has a maximum length of 5 and it will be updated once the route is recalculated. Surprisingly, the navigation memory significantly reduce the average running time of our AI and keeps the majority of the decision to be navigating decision. The surviving time also increased significantly.
 
-![Breadth First Search](navigating memory.png){:class="img-responsive centered" height="50%" width="50%"}
+![Breadth First Search](navigating memory.png){:class="img-responsive centered" height="40%" width="40%"}
 
 Additionally we realized that a special occasion that our agent may die by going to the logical direction.
 
-![Breadth First Search](logical direction.png){:class="img-responsive centered" height="50%" width="50%"}
+![Breadth First Search](logical direction.png){:class="img-responsive centered" height="40%" width="40%"}
 
 To solve that problem, we added a feature for eliminating the diagonal direction that may cause the player to death in those cases. We implemented it by splitting the player’s standing tile into four pieces and determine which piece the player is currently standing on. Then, we find the direction that may cause kill the player and remove it from our choices.
 
