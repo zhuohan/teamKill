@@ -66,11 +66,24 @@ Comment: since each tile is represented by 1 in the input matrix and the missing
 
 After selecting the targeted tile, we use the Dijkstra’s algorithm to find the shortest path between the player and the targeted tile. Finally, we output the first step of that path.
 
+
+### Improvement
+
+After evaluating the previous combined version of our algorithm, we realized that the running time of navigating algorithm is too large. Sometimes, the agent gets conflicting decision between level 2 and level 3 and it keeps switching because the running time is just at the limit. 
+
+In order to help our AI decide which method to use, we added the navigation memory to our agent. The navigation memory record part of the previous navigation result. It remembers the next four steps the navigation will go after finding the route. If the next step is available the agent will just walk to that step instead of recalculating the navigation algorithm again.
+
+To do that, we added a queue to our navigation system. The queue has a maximum length of 5 and it will be updated once the route is recalculated. Surprisingly, the navigation memory significantly reduce the average running time of our AI and keeps the majority of the decision to be navigating decision. The surviving time also increased significantly.
+
+[picture]
+
+Additionally we realized that a special occasion that our agent may die by going to the logical direction.
+[picture]
+
+To solve that problem, we added a feature for eliminating the diagonal direction that may cause the player to death in those cases. We implemented it by splitting the player’s standing tile into four pieces and determine which piece the player is currently standing on. Then, we find the direction that may cause kill the player and remove it from our choices.
+
+
 ## Evaluation
 
 
 ## References
-
-Fridenfalk, M. (2014)
-N-Person Minimax and Alpha-Beta Pruning.
-In: NICOGRAPH International 2014 (pp. 43-52).
