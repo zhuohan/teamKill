@@ -87,6 +87,30 @@ To solve that problem, we added a feature for eliminating the diagonal direction
 ## Evaluation
 
 
+#### Human thought
+In order to show that our AI is great, we try to prove that it thinks like a human. Normally, when we play the ground falling game, we will go away from the enemy players and go toward the directions that have bigger lands. In our algorithm, smartness level 3 (navigation) is trying to simulate human’s thought. The AI will find the ground center that has the largest ability of expansion. The AI will then, navigate to that point.
+
+Initially, the algorithm is really time-consuming and we provide the AI with simpler choices. At version 1, only when the situation is easier for the AI to do the human thought, will the AI do it. Usually, it happens when the AI is trapped on a small island with less than 100 tiles. If it uses the algorithm in a larger island, it will take more than 1 seconds to determine the next move. However, the AI usually moves 2-3 tiles each second, so it will die with that much delay. At that phase, we consider our AI to be: barely working.
+
+In the second version, we significantly improved the running speed of our algorithm and enable it to calculate the whole map (1600 tiles) within 0.25 second in Python. At this phase, our AI can easily use the human logic and navigate to that direction.
+
+
+
+
+
+In the third version, we, again, improved the running speed of our algorithm. We decrease the average running time to be less than 0.2 second in Python. With this improvement, we also increased the surviving time of the agent to be 4 times longer than the previous version.
+
+
+Finally, we also evaluate a traditional greedy algorithm based on the Grid World MDP. Surprisingly, our algorithm runs more than 100 times faster than the traditional solution.
+
+
+
+In order to visualize the abilities of our algorithms, we run 10 times for each of our algorithms including:
+#####  Level 1: Immediate decision
+##### Level 2: Two steps decision
+##### Level 3 (Navigating to best point ) combined with level 1 and 2
+##### Grid World MDP greedy algorithm
+##### improved level 1, 2, 3
 ## References
 
 Fridenfalk, M. (2014)
