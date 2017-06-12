@@ -81,6 +81,8 @@ Additionally we realized that a special occasion that our agent may die by going
 
 ![Breadth First Search](logical direction.png){:class="img-responsive centered" height="40%" width="40%"}
 
+In the above senario, the player may want to go to a top left direction which is Okay if he stands on the midleof the grid. However, he is standing on the bottom left corner. If he walks to top left direction, he may end up going to the left tile first before going to the top left tile. If the left tile is dangerous, he may die with that mistake.
+
 To solve that problem, we added a feature for eliminating the diagonal direction that may cause the player to death in those cases. We implemented it by splitting the player’s standing tile into four pieces and determine which piece the player is currently standing on. Then, we find the direction that may cause kill the player and remove it from our choices.
 
 
