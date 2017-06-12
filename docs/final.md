@@ -133,22 +133,6 @@ In order to visualize the abilities of our algorithms, we run 10 times for each 
 ![Breadth First Search](123gs.png){:class="img-responsive centered" height="80%" width="80%"}
 ![Breadth First Search](all.png){:class="img-responsive centered" height="80%" width="80%"}
 
-#### Running time of level 2 is significantly faster than level 3
-
-![Breadth First Search](123.png){:class="img-responsive centered" height="50%" width="50%"}
-
-#### Running time of level 3 is significantly faster than greedy algorithm
-
-![Breadth First Search](123g.png){:class="img-responsive centered" height="50%" width="50%"}
-
-#### We log the original data to give a better visualization for the running time 
-
-![Breadth First Search](log.png){:class="img-responsive centered" height="50%" width="50%"}
-
-#### In the end, we record the survial time for each of our algorithm
-
-![Breadth First Search](123gs.png){:class="img-responsive centered" height="50%" width="50%"}
-![Breadth First Search](all.png){:class="img-responsive centered" height="50%" width="50%"}
 
 ## References
 
