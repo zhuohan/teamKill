@@ -94,16 +94,16 @@ Initially, the algorithm is really time-consuming and we provide the AI with sim
 
 In the second version, we significantly improved the running speed of our algorithm and enable it to calculate the whole map (1600 tiles) within 0.25 second in Python. At this phase, our AI can easily use the human logic and navigate to that direction.
 
+![Breadth First Search](v1.png){:class="img-responsive centered" height="40%" width="40%"}
 
 
 
 
 In the third version, we, again, improved the running speed of our algorithm. We decrease the average running time to be less than 0.2 second in Python. With this improvement, we also increased the surviving time of the agent to be 4 times longer than the previous version.
-
+ 
+![Breadth First Search](imp.png){:class="img-responsive centered" height="40%" width="40%"}
 
 Finally, we also evaluate a traditional greedy algorithm based on the Grid World MDP. Surprisingly, our algorithm runs more than 100 times faster than the traditional solution.
-
-
 
 In order to visualize the abilities of our algorithms, we run 10 times for each of our algorithms including:
 #####  Level 1: Immediate decision
@@ -112,6 +112,28 @@ In order to visualize the abilities of our algorithms, we run 10 times for each 
 ##### Grid World MDP greedy algorithm
 ##### improved level 1, 2, 3
 ## References
+
+#### Running time of level 1 is significantly faster than level 2
+
+![Breadth First Search](12.png){:class="img-responsive centered" height="40%" width="40%"}
+
+#### Running time of level 2 is significantly faster than level 3
+
+![Breadth First Search](123.png){:class="img-responsive centered" height="40%" width="40%"}
+
+#### Running time of level 3 is significantly faster than greedy algorithm
+
+![Breadth First Search](123g.png){:class="img-responsive centered" height="40%" width="40%"}
+
+#### We log the original data to give a better visualization for the running time 
+
+![Breadth First Search](log.png){:class="img-responsive centered" height="40%" width="40%"}
+
+#### In the end, we record the survial time for each of our algorithm
+
+![Breadth First Search](123gs.png){:class="img-responsive centered" height="40%" width="40%"}
+![Breadth First Search](all.png){:class="img-responsive centered" height="40%" width="40%"}
+
 
 Fridenfalk, M. (2014)
 N-Person Minimax and Alpha-Beta Pruning.
