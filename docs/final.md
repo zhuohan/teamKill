@@ -38,13 +38,16 @@ The three types of logic that our algorithm has are ranked by complexity. Initia
 
 ##### Three levels of smartness:
 
-1. If the player is running out of time to think about his current situation, he will look up all the eight directions of his current location. He will count the number of tiles each direction can reach if he walks straight to that single direction for the rest of the game. Then, he will choose the direction with the longest path from the count.
+######Level 1: Immediate decision
+If the player is running out of time to think about his current situation, he will look up all the eight directions of his current location. He will count the number of tiles each direction can reach if he walks straight to that single direction for the rest of the game. Then, he will choose the direction with the longest path from the count.
 ![Breadth First Search](Algorithm2-1.jpg){:class="img-responsive centered" height="50%" width="50%"}
 
-2. If the player has more time, he will look around the eight adjacent tiles of him. For each tile, he will count the total length of the eight direction value in the previous algorithm as the score of that tile. Then, the player will move to the tile with the highest score.
+######Level 2: Two steps decision
+If the player has more time, he will look around the eight adjacent tiles of him. For each tile, he will count the total length of the eight direction value in the previous algorithm as the score of that tile. Then, the player will move to the tile with the highest score.
 ![Breadth First Search](4.png){:class="img-responsive centered" height="50%" width="50%"}
 
-3. If the player still has some time, he will iterate through all the tiles in the map and find the tile that has the maximum possibility to survive. Then, he will navigate to that tile (output the first navigation direction).
+######Level 3: Navigating to best point
+If the player still has some time, he will iterate through all the tiles in the map and find the tile that has the maximum possibility to survive. Then, he will navigate to that tile (output the first navigation direction).
 ![Breadth First Search](5.png){:class="img-responsive centered" height="50%" width="50%"}
 
 More specifically about the third level of smartness, the player will select the tile with maximum possibility to survive by using a new algorithm inspired by state transition machine.
