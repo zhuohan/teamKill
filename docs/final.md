@@ -17,13 +17,13 @@ title:  Final Report
 ### Building the game:
 
 Game rules:
-We implemented the game ourselves. The game is a survival game in Minecraft and the player tries to survive in the map as long as possible. During the game, each player walks inside a plain ground and each tile of the ground disappears 10 seconds after a player stepped on it. Players have to keep moving in order to survive. 
+We implement the game ourselves. The game is a survival game in Minecraft and the player tries to survive in the map as long as possible. During the game, each player walks inside a plain ground and each tile of the ground disappears 10 seconds after a player steps on it. Players have to keep moving in order to survive. 
 
 Implementing the game:
 
-We wrote a special block that will be destroyed 10 seconds after something collides with it. However, the Minecraft API is limited, and does not have the function for delaying the destruction. To solve that problem, we implemented a hashmap (dictionary) to store all the destructions and time spot. Then, we destroy the blocks after the time in the dictionary is 10 seconds earlier than the current time.
+We implement a special block that would be destroyed 10 seconds after something collided with it. However, the Minecraft API is limited, and does not have the function for delaying the destruction. To solve that problem, we implement a hashmap (dictionary) to store all the destructions and time spot. Then, we destroy the blocks after the time in the dictionary is 10 seconds earlier than the current time.
 
-After creating the block, we designed the map with 40 * 40 special block. To prevent the player going beyond the ground, we surround it with diamond block that is 10 units high. To make sure the player lose after it falls off the ground, we put 2 layers of lava underneath the ground.
+After creating the block, we design the map with 40 * 40 special block. To prevent the player going beyond the ground, we surround it with diamond block that is 10 units high. To make sure the player lose after it falls off the ground, we put 2 layers of lava underneath the ground.
 
 (For more information about how the game works, please watch our video.)
 ![Screenshot](Mine3.PNG){:class="img-responsive centered" height="40%"}
@@ -38,7 +38,7 @@ The three types of logic that our algorithm has are ranked by complexity. Initia
 
 #### Three levels of smartness:
 
-#####  Level 1: Immediate decision
+##### Level 1: Immediate decision
 If the player is running out of time to think about his current situation, he will look up all the eight directions of his current location. He will count the number of tiles each direction can reach if he walks straight to that single direction for the rest of the game. Then, he will choose the direction with the longest path from the count.
 ![Breadth First Search](Algorithm2-1.jpg){:class="img-responsive centered" height="40%" width="40%"}
 
@@ -69,21 +69,21 @@ After selecting the targeted tile, we use the Dijkstra’s algorithm to find the
 
 ### Improvement
 
-After evaluating the previous combined version of our algorithm, we realized that the running time of navigating algorithm is too large. Sometimes, the agent gets conflicting decision between level 2 and level 3 and it keeps switching because the running time is just at the limit. 
+After evaluating the previous combined version of our algorithm, we realize that the running time of navigating algorithm is too long. Sometimes, the agent gets conflicting decision between level 2 and level 3 and it keeps switching because the running time is just at the limit. 
 
-In order to help our AI decide which method to use, we added the navigation memory to our agent. The navigation memory record part of the previous navigation result. It remembers the next four steps the navigation will go after finding the route. If the next step is available the agent will just walk to that step instead of recalculating the navigation algorithm again.
+In order to help our AI decide which method to use, we added the navigation memory to our agent. The navigation memory records part of the previous navigation result. It remembers the next four steps the navigation will go after finding the route. If the next step is available the agent will just walk to that step instead of recalculating the navigation algorithm again.
 
-To do that, we added a queue to our navigation system. The queue has a maximum length of 5 and it will be updated once the route is recalculated. Surprisingly, the navigation memory significantly reduce the average running time of our AI and keeps the majority of the decision to be navigating decision. The surviving time also increased significantly.
+To do that, we added a queue to our navigation system. The queue has a maximum length of 5 and it will be updated once the route is recalculated. Surprisingly, the navigation memory significantly reduces the average running time of our AI and keeps the majority of the decision to be navigating decision. The surviving time also increases significantly.
 
 ![Breadth First Search](navigating memory.png){:class="img-responsive centered" height="40%" width="40%"}
 
-Additionally we realized that a special occasion that our agent may die by going to the logical direction.
+Additionally we realize that a special occasion that our agent may die by going to the logical direction.
 
 ![Breadth First Search](logical direction.png){:class="img-responsive centered" height="40%" width="40%"}
 
-In the above senario, the player may want to go to a top left direction which is Okay if he stands on the midleof the grid. However, he is standing on the bottom left corner. If he walks to top left direction, he may end up going to the left tile first before going to the top left tile. If the left tile is dangerous, he may die with that mistake.
+In the above senario, the player may want to go to the top left direction which is Okay if he stands on the middle of the grid. However, he is standing on the bottom left corner. If he walks to top left direction, he may end up going to the left tile first before going to the top left tile. If the left tile is dangerous, he may die with that mistake.
 
-To solve that problem, we added a feature for eliminating the diagonal direction that may cause the player to death in those cases. We implemented it by splitting the player’s standing tile into four pieces and determine which piece the player is currently standing on. Then, we find the direction that may cause kill the player and remove it from our choices.
+To solve that problem, we added a feature for eliminating the diagonal direction that may cause the player to death in those cases. We implemented it by splitting the player’s standing tile into four pieces and determine which piece the player is currently standing on. Then, we find the direction that may kill the player and remove it from our choices.
 
 
 ## Evaluation
@@ -94,7 +94,7 @@ In order to show that our AI is great, we try to prove that it thinks like a hum
 
 Initially, the algorithm is really time-consuming and we provide the AI with simpler choices. At version 1, only when the situation is easier for the AI to do the human thought, will the AI do it. Usually, it happens when the AI is trapped on a small island with less than 100 tiles. If it uses the algorithm in a larger island, it will take more than 1 seconds to determine the next move. However, the AI usually moves 2-3 tiles each second, so it will die with that much delay. At that phase, we consider our AI to be: barely working.
 
-In the second version, we significantly improved the running speed of our algorithm and enable it to calculate the whole map (1600 tiles) within 0.25 second in Python. At this phase, our AI can easily use the human logic and navigate to that direction.
+In the second version, we significantly improve the running speed of our algorithm and enable it to calculate the whole map (1600 tiles) within 0.25 second in Python. At this phase, our AI can easily use the human logic and navigate to that direction.
 
 ![Breadth First Search](v1.png){:class="img-responsive centered" height="80%" width="80%"}
 
