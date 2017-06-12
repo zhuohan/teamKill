@@ -70,3 +70,7 @@ After selecting the targeted tile, we use the Dijkstra’s algorithm to find the
 
 
 ## References
+
+Fridenfalk, M. (2014)
+N-Person Minimax and Alpha-Beta Pruning.
+In: NICOGRAPH International 2014 (pp. 43-52).
