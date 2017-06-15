@@ -10,13 +10,13 @@ title:  Final Report
 ## Project Summary
 
 TeamKill is an Artificial Intelligence Malmo-based project developed for a single/multi-player Minecraft survival mini-game called “Falling Floor”.<br>
-The AI agent tries to survive in this environment by using our combination of search and navigation algorithms. It is different from traditional navigation algorithm because the map is changing really fast. It is using human-like thinking with advanced algorithms, so it has a chance to out-smart human players.
+The AI agent tries to survive in this environment by using our combination of search and navigation algorithms. 
 
 ### Falling Floor
 In this game, the players’ mission is to survive by running around the map while floors start to crumble beneath them. This zero-sum game requires players to be the last one standing in order to win the game. The players are not allowed to jump or do any other actions other than to run for survival and employ various tactics to survive longer than their opponents. The player's performance is calculated based on their survival time.
 
 ### Challenges and Goal
-In order to be applicable for a real-time changing environment against human players, our approach is constrained to algorithms with quick runtime that produce good estimation of the best move possible in any situation. In this harsh environment, conventional best-move search algorithms will suffer due to their runtime, while quick search algorithms tend to suffer from short-sightedness. This project explores various algorithms, compares their performance in terms of algorithm runtime and agent survival time, and selects the best combination of algorithms that produce the best performance.
+In order to be applicable for a real-time changing environment against human players, our approach is constrained to algorithms with quick runtime that produce good estimation of the best move possible in any situation. In this harsh environment, conventional best-move search algorithms will suffer due to their runtime, while quick search algorithms tend to suffer from short-sightedness. This project explores various algorithms, compares their performance in terms of algorithm runtime and agent survival time, and selects the best combination of algorithms that produce the best performance. It is different from traditional navigation algorithm because the map is changing really fast. It is using human-like thinking with advanced algorithms, so it has a chance to out-smart human players.
 
 ## Approaches
 
