@@ -5,7 +5,8 @@ title:  Final Report
 
 ## Video
 
-[![Description of the Video](https://youtu.be/dvdL-JowSeQ)](https://youtu.be/dvdL-JowSeQ)
+[![Description of the Video](https://youtu.be/dvdL-JowSeQ.jpg)](https://youtu.be/dvdL-JowSeQ)
+<iframe width="1120" height="630" src="https://www.youtube.com/embed/glNiOwP4hp8" frameborder="0" allowfullscreen></iframe>
 
 ## Project Summary
 
