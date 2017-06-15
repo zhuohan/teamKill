@@ -10,9 +10,11 @@ title:  Final Report
 ## Project Summary
 
 TeamKill is an Artificial Intelligence Malmo-based project developed for a single/multi-player Minecraft survival mini-game called “Falling Floor”.<br>
-Our AI agent tries to survive in this environment by using our combination of search and navigation algorithms.
+The AI agent tries to survive in this environment by using our combination of search and navigation algorithms. It is different from traditional navigation algorithm because the map is changing really fast. It is using human-like thinking with advanced algorithms, so it has a chance to out-smart human players.
+
 ### Falling Floor
 In this game, the players’ mission is to survive by running around the map while floors start to crumble beneath them. This zero-sum game requires players to be the last one standing in order to win the game. The players are not allowed to jump or do any other actions other than to run for survival and employ various tactics to survive longer than their opponents. The player's performance is calculated based on their survival time.
+
 ### Challenges and Goal
 In order to be applicable for a real-time changing environment against human players, our approach is constrained to algorithms with quick runtime that produce good estimation of the best move possible in any situation. In this harsh environment, conventional best-move search algorithms will suffer due to their runtime, while quick search algorithms tend to suffer from short-sightedness. This project explores various algorithms, compares their performance in terms of algorithm runtime and agent survival time, and selects the best combination of algorithms that produce the best performance.
 
@@ -23,11 +25,11 @@ In order to be applicable for a real-time changing environment against human pla
 ### Building the game:
 
 Game rules:
-We implement the game ourselves. The game is a survival game in Minecraft and the player tries to survive in the map as long as possible. During the game, each player walks inside a plain ground and each tile of the ground disappears 10 seconds after a player steps on it. Players have to keep moving in order to survive. 
+We implement the game ourselves. The game is a survival game in Minecraft and the player tries to survive in the map as long as possible. During the game, each player walks inside a plain ground and each tile of the ground disappears 4 seconds after a player steps on it. Players have to keep moving in order to survive. 
 
 Implementing the game:
 
-We implement a special block that would be destroyed 10 seconds after something collided with it. However, the Minecraft API is limited, and does not have the function for delaying the destruction. To solve that problem, we implement a hashmap (dictionary) to store all the destructions and time spot. Then, we destroy the blocks after the time in the dictionary is 10 seconds earlier than the current time.
+We implement a special block that would be destroyed 10 seconds after something collided with it. However, the Minecraft API is limited, and does not have the function for delaying the destruction. To solve that problem, we implement a hashmap (dictionary) to store all the destructions and time spot. Then, we destroy the blocks after the time in the dictionary is 4 seconds earlier than the current time.
 
 After creating the block, we design the map with 40 * 40 special block. To prevent the player going beyond the ground, we surround it with diamond blocks that is 10 units high. To make sure the player lose after it falls off the ground, we put 2 layers of lava underneath the ground.
 
