@@ -5,8 +5,7 @@ title:  Final Report
 
 ## Video
 
-<iframe width="1120" height="630" src="https://www.youtube.com/watch?v=dvdL-JowSeQ" frameborder="0" allowfullscreen></iframe>
-
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/dvdL-JowSeQ?ecver=1" frameborder="0" allowfullscreen></iframe>
 ## Project Summary
 
 TeamKill is an Artificial Intelligence Malmo-based project developed for a single/multi-player Minecraft survival mini-game called “Falling Floor”.<br>
